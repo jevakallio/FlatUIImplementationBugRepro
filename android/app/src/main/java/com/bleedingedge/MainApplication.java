@@ -8,6 +8,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import com.facebook.react.flat.FlatUIImplementationProvider;
+import com.facebook.react.uimanager.UIImplementationProvider;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -24,6 +27,11 @@ public class MainApplication extends Application implements ReactApplication {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage()
       );
+    }
+
+    @Override
+    protected UIImplementationProvider getUIImplementationProvider() {
+        return new FlatUIImplementationProvider();
     }
   };
 
